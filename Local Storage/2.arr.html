@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // Storing arrays into LocalStorage
+    var numbers = [1,6,8,9]  //"1,6,8,9"
+   localStorage.setItem("LuckyNumbers",numbers)
+   
+
+   var array=localStorage.getItem("LuckyNumbers")
+   console.log(typeof(array));
+
+
+    // JSON methods
+   //  JSON.stringify()  - it will convert the given 
+   //arrays into strings and store in the LocalStorage
+   
+   // it will convert strings into array format only
+   // it will not convert strings into array
+   localStorage.setItem("LuckyNumbers",JSON.stringify(numbers));
+
+  // var array=localStorage.getItem("LuckyNumbers")
+   //console.log(typeof(array));   - string
+
+// what to do if you want to store in the form of array
+// and get in the form of array
+// we have to use like this JSON.parse(localStorage.getItem("LuckyNumbers"))
+
+var array=JSON.parse(localStorage.getItem("LuckyNumbers"))
+   console.log(typeof(array));
+   console.log(array);
+
+
+
+
+//Final 2 points
+// if you want to store array into local storage you need to use JSON.stringify()
+// if you want to get array from the local storage you need to use JSON.parse()
+
+
+
+var names =["anurag","mahesh","ranveer"]
+
+// JSON.stringify(localStorage.setItem("studentNames",names));
+
+localStorage.setItem("studentNames",JSON.stringify(names));
+
+var out = JSON.parse(localStorage.getItem("studentNames"));  //JSON
+console.log(out);
+
+
+
+</script>

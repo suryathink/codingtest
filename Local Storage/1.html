@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // setItem, getItem, clear , removeItem
+    // JSON.stringify()
+    //JSON.parse()
+
+    //localStorage.setItem("key","value")
+    localStorage.setItem("mobile","87878787")
+
+    localStorage.setItem("CVV","12345")
+
+// storing strings in localStorage
+// key name should always be in quotes
+//Local Storage will accept to store only strings and numbers
+
+
+    localStorage.setItem("name","chandra")
+
+    var studen1="Gautam";
+    localStorage.setItem("Sname",studen1)
+
+    var student2="Irfan";
+    localStorage.setItem("Sname2",student2)
+
+
+
+    //getItem - localStorage.getItem("key")
+
+  var getMobile =  localStorage.getItem("mobile")
+  console.log(getMobile);
+
+  console.log(localStorage.getItem("CVV"));
+
+  // whenever you are trying to acess something which is not there will return null
+
+  console.log(localStorage.getItem("CVVqq"));  //null
+
+// null means No Value
+// Undefined means there is a variable but it is not defined
+
+console.log(localStorage.getItem("Sname2"));
+
+
+
+</script>

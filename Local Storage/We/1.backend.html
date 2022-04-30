@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../4.accessing keys/common.css">
+<style>
+    #navbar{
+       margin-bottom: 100px;
+    }
+</style>
+</head>
+<body>
+    <div id="navbar">
+        <div> <a href="1.backend.html">Backend</a> </div>
+        <div> <a href="2.frontend.html">Frontend</a></div>
+
+    </div>
+
+    <form id="investorform">  
+        <input id="imgURL" type="text" placeholder="Enter Image Url" />
+        <input id="name" type="text" placeholder="Enter investor name" />
+        <input id="role" type="text" placeholder="Enter Investor Role" />
+        <input id="companylogo" type="text" placeholder="Enter Comapny logo URL" />
+           
+        <input type="submit" />
+    </form>
+</body>
+</html>
+
+
+<script>
+    // I want to store this input as array of object 
+    // imgurl ,name, companyLogo
+   document.querySelector("#investorform").addEventListener("submit",investorsFun);
+
+
+   var investorArr= JSON.parse(localStorage.getItem("investorData"))||[];
+
+//    var investorArr
+//    if (JSON.parse(localStorage.getItem("investorData"))==null){
+//        investorArr=[];
+//    } else{
+//        investorArr=JSON.parse(localStorage.getItem("investorData"))
+//    }
+
+   //array of objects
+   function investorsFun(){
+    event.preventDefault();
+
+
+    //idOfForm.idOfinput.value
+
+
+    var investorObj={
+       // investorImage: document.querySelector("#imgURL").value,
+       investorImage:investorform.imgURL.value,
+       // investorName:document.querySelector("#name").value,
+        investorName:investorform.name.value,
+       // investorRole: document.querySelector("#role").value ,
+       investorRole:investorform.role.value ,
+      //  investorCompanyLogo: document.querySelector("#companylogo").value,
+      investorCompanyLogo:investorform.companylogo.value,
+
+    };
+    investorArr.push(investorObj);
+    console.log(investorArr);
+    localStorage.setItem("investorData",JSON.stringify(investorArr))
+   
+   }
+   
+  
+
+</script>

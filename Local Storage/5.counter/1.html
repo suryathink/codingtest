@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <button id="dec">Decrement</button>
+     <button id="inc">Increment</button>
+</body>
+</html>
+
+<script>
+
+//   var count;
+    
+//   if (localStorage.getItem("counterValue")==null){
+//       count=0;
+//   } else {
+//       count=count= localStorage.getItem("counterValue")
+//   }
+
+//Either write Line 27 or write Line 18 to Line 24 (Both are correct)
+  var count=localStorage.getItem("counterValue")||0;
+
+
+  document.querySelector("h1").innerText=count;
+  
+  document.querySelector("#dec").addEventListener("click",decFun)
+
+  function decFun(){
+    count--;
+    document.querySelector("h1").innerText=count;
+   localStorage.setItem("counterValue",count)
+  }
+
+  document.querySelector("#inc").addEventListener("click",incFun)
+
+  function incFun(){
+    count++;
+    document.querySelector("h1").innerText=count;
+    localStorage.setItem("counterValue",count);
+  }
+  
+
+
+  //Or and operetors || &&
+
+// for And statement Output will be true when both conditions will be true
+ console.log(true && true);  // true
+
+ console.log(true && false); // false
+
+ console.log(false && true); // false
+
+ console.log(false && false); //false
+
+
+ console.log("--------------------");
+
+ //OR statement
+
+ // output is true even if 1 condition is true
+
+ console.log(true || true);  // true
+ console.log(true||false); //true
+ console.log(false || true); //true
+ console.log(false || false); //false
+
+ console.log("--------------------");
+ console.log(true || true);  // true
+ console.log(true || null);  // true
+ console.log(null || true);  // true
+ console.log(null || null);  // null
+
+
+console.log(localStorage.getItem("agagagagag")||true);  //true
+
+console.log(true || localStorage.getItem("agagagagag")); //true
+
+//console.log(localStorage.getItem("agagagagag")||0); //0
+
+console.log("---------------------");
+
+ console.log(false||1);  //1
+
+ console.log();
+
+
+
+
+
+ //null, "", undefined, NaN - false
+var x=NaN;
+if (x){
+    console.log("masai");
+} else {
+    console.log("masai school");
+}
+
+
+</script>
